@@ -6,6 +6,7 @@ var calendar = require('./basic_convo/calendar');
 var github = require('./github/github');
 var weather = require('./weather/weather')
 var translate = require('./watson/translation');
+var tone = require('./watson/tone');
 
 var directMessage = 'direct_message,direct_mention,mention';
 
@@ -58,6 +59,11 @@ controller.hears(['show (.*) repos', 'show (.*) repo', 'repo (.*)', 'repos (.*)'
   'show repos', 'repos', 'show repo'], directMessage, github.getRepo);
 controller.hears(['unwatch (.*\/.*)'], directMessage, github.unwatchRepo);
 controller.hears(['watch (.*\/.*)'], directMessage, github.watchRepo);
+
+// Tone
+controller.hears(['tone list', 'tone (channels?)'], directMessage, tone.channelList);
+controller.hears(['tone ((?!help).*)'], directMessage, tone.toneChannel);
+controller.hears(['tone', 'tone help'], directMessage, tone.help);
 
 // Weather
 controller.hears(['weather today in', 'weather today for', 'weather today'], directMessage, weather.getTodayWeather);
