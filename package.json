@@ -4,7 +4,6 @@
   "description": "A Slack App bot to assist Engineering teams with Github PR workflow, JIRA issue tracking and Google Calendar.",
   "main": "karabot.js",
   "scripts": {
-    "start": "node server.js",
     "test": "mocha ./spec/karabot.js"
   },
   "repository": {
