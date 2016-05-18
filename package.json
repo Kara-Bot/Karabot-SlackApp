@@ -4,7 +4,7 @@
   "description": "A Slack App bot to assist Engineering teams with Github PR workflow, JIRA issue tracking and Google Calendar.",
   "main": "karabot.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "test": "mocha ./spec/karabot.js"
   },
   "repository": {
@@ -39,11 +39,11 @@
     "watson-developer-cloud": "^1.5.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
     "eslint": "^2.9.0",
     "eslint-config-airbnb-base": "^1.0.4",
     "eslint-plugin-import": "^1.6.1",
-    "chai": "^3.5.0",
-    "chai-http": "^2.0.1",
     "mocha": "^2.4.5"
   }
 }
